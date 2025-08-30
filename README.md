@@ -16,6 +16,7 @@ An end-to-end machine learning project to classify breast cancer tumors as malig
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Results & Conclusion](#results-&-conclusion)
+- [TL;DR](#tldr)
 - [Future Work & Next Steps](#future-work-&-next-steps)
 - [Contributing](#contributing)
 - [License](#license)
@@ -107,6 +108,14 @@ With this new focus, our analysis yielded a different conclusion:
 - The **Logistic Regression model** also achieved a strong recall of 93% for malignant cases.
 
 Ultimately, while the SVM showed the best overall statistical performance, the **Random Forest model proved to be the most effective for the primary clinical objective of this project**: minimizing the risk of misdiagnosing a patient with a malignant tumor.
+
+## TL;DR
+
+We compared three machine learning models (SVM, Random Forest, Logistic Regression) to classify breast cancer tumors.
+
+Initially, the **SVM model had the best overall accuracy (96.3%)**. However, we realized the most critical metric for a medical diagnosis is **recall for malignant tumors**, to avoid dangerously misdiagnosing a cancer patient as healthy (a False Negative).
+
+When re-evaluating based on this crucial metric, the **Random Forest model was the most effective**, successfully identifying **95%** of all malignant tumors, making it the most reliable choice for this clinical task.
 
 ## Future Work & Next Steps
 
