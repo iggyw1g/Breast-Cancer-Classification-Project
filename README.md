@@ -15,7 +15,8 @@ An end-to-end machine learning project to classify breast cancer tumors as malig
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Results](#results)
+- [Results & Conclusion](#results-&-conclusion)
+- [Future Work & Next Steps](#future-work-&-next-steps)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contributors](#contributors)
@@ -91,15 +92,29 @@ You will need Python 3 and Pip installed on your system.
    jupyter notebook finalproject.ipynb
    ```
 
-## Results
+## Results & Conclusion
 
-After a comprehensive evaluation of all three models, the Support Vector Machine (SVM) with a linear kernel was identified as the top-performing model.
+Our project aimed to develop and compare three classification models—Logistic Regression, Support Vector Machines, and Random Forests—to identify malignant tumors.
 
-- SVM (Linear Kernel): Achieved the best balance of precision and recall, demonstrating a strong ability to distinguish between malignant and benign tumors with high confidence. The linear nature of the model suggests that the feature space is largely linearly separable.
-- Random Forest: Also performed exceptionally well, providing a robust model and valuable insights through its feature importance scores.
-- Logistic Regression: Served as a strong baseline but was ultimately outperformed by the more complex ensemble and margin-based models.
+Initially, focusing on general performance metrics, the **_Support Vector Machine (SVM)_ model emerged as the top performer**, achieving the highest accuracy (96.3%) and F1-score (95.1%). The Random Forest (95.6% acc, 94.1% F1) and Logistic Regression (95.1% acc, 93.4% F1) models were close competitors. The effectiveness of the SVM with a linear kernel suggests that the feature space is largely linearly separable, where defining an optimal hyperplane is a highly effective strategy.
 
-The final conclusion emphasizes the importance of recall for malignant cases, where the SVM model proved highly effective, successfully identifying 93% of all malignant tumors in the test set.
+However, we recognized that in a medical context, overall accuracy is secondary to minimizing **False Negatives**—incorrectly classifying a malignant tumor as benign. This critical insight shifted our primary evaluation metric to **Recall for malignant cases (Class 1)**.
+
+With this new focus, our analysis yielded a different conclusion:
+
+- The **Random Forest model** achieved the **highest recall of 95%** for malignant cases when trained on the top 6 features from the "mean" feature set. This makes it the most clinically valuable model, as its primary strength is correctly identifying patients with cancer, which is the most critical task.
+- The best **SVM model** achieved a recall of 93% for malignant cases. While slightly lower, it was chosen for its exceptional recall on benign cases (99%) and higher precision, indicating it produces fewer false alarms.
+- The **Logistic Regression model** also achieved a strong recall of 93% for malignant cases.
+
+Ultimately, while the SVM showed the best overall statistical performance, the **Random Forest model proved to be the most effective for the primary clinical objective of this project**: minimizing the risk of misdiagnosing a patient with a malignant tumor.
+
+## Future Work & Next Steps
+
+While the models performed well, there are several avenues for future improvement:
+
+- **Hyperparameter Tuning**: A more exhaustive search for hyperparameters could yield better results. Using `GridSearchCV` to find the optimal `C` parameter (margin softness) for the SVM or `max_depth` for the Random Forest could provide a significant performance boost.
+- **Validation on External Data**: Testing the final models on a completely new, external dataset would provide a true measure of their generalization capabilities and robustness.
+- **Standardized Model Comparison**: A challenge in our final analysis was that the top-performing models were trained on different feature sets (6 "mean" features for RF vs. 10 "worst" features for SVM/Logistic Regression). A future step would be to re-train and compare all models on a single, optimized feature set for a more direct and fair comparison.
 
 ## Contributing
 
