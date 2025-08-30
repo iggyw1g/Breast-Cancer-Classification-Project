@@ -93,6 +93,8 @@ You will need Python 3 and Pip installed on your system.
    jupyter notebook finalproject.ipynb
    ```
 
+---
+
 ## Results & Conclusion
 
 Our project aimed to develop and compare three classification models—Logistic Regression, Support Vector Machines, and Random Forests—to identify malignant tumors.
@@ -116,6 +118,8 @@ We compared three machine learning models (SVM, Random Forest, Logistic Regressi
 Initially, the **SVM model had the best overall accuracy (96.3%)**. However, we realized the most critical metric for a medical diagnosis is **recall for malignant tumors**, to avoid dangerously misdiagnosing a cancer patient as healthy (a False Negative).
 
 When re-evaluating based on this crucial metric, the **Random Forest model was the most effective**, successfully identifying **95%** of all malignant tumors, making it the most reliable choice for this clinical task.
+
+---
 
 ## Future Work & Next Steps
 
