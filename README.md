@@ -77,11 +77,11 @@ You will need Python 3 and Pip installed on your system.
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/iggyw1g/MLProj
+   git clone https://github.com/iggyw1g/Breast-Cancer-Classification-Project.git
    ```
 2. **Navigate into the project directory:**
    ```sh
-   cd MLProj
+   cd Breast-Cancer-Classification-Project
    ```
 3. **Install the required libraries:**
    - It is recommended to use a virtual environment.
@@ -149,4 +149,4 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - Alisa Sumwalt - https://github.com/iggyw1g
 - Andrew ZiYu Wang - https://github.com/20wangaz2
 
-Project Link: https://github.com/iggyw1g/MLProj
+Project Link: https://github.com/iggyw1g/Breast-Cancer-Classification-Project.git
